@@ -1,0 +1,17 @@
+.navbar {
+  height: 70px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #574f4f;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.container {
+  margin-top: 11vh;
+  width: 100vw;
+  background-color: #f3f3f3;
+  height: 89vh;
+  max-height: 89vh;
+  overflow-y: auto;
+}

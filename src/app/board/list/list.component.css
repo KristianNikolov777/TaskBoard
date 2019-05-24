@@ -1,0 +1,28 @@
+.list {
+  background: #e2e4e6;
+  width: 20vw;
+  margin-top: 30px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  display: inline-block;
+  height: 20rem;
+  max-height: 20rem;
+  overflow-y: auto;
+  border-radius: 10px;
+  /* box-shadow: 0 2px 4px 0 rgba(138, 138,138, 0.5); */
+  /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05); */
+}
+
+.list-title {
+  text-align: center;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.list-actions {
+  position: relative;
+  top: 5px;
+  right: 5px;
+  text-align: right;
+  cursor: pointer;
+}
