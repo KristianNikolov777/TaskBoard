@@ -1,3 +1,4 @@
 <div class="board">
-  <app-list *ngFor="let list of lists" [list]="list"></app-list>
+  <button class="add-list" (click)="onAddList()">Add list</button>
+  <app-list *ngFor="let list of lists, let i = index" [index]="i" [list]="list"></app-list>
 </div>

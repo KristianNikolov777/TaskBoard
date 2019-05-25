@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+
 
 import { List } from '../shared/list.model';
+import { ListService } from '../shared/list.service';
 
 @Component({
   selector: 'app-board',
@@ -8,17 +11,23 @@ import { List } from '../shared/list.model';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  lists: List[] = [
-    new List('To Do', []),
-    new List('Doing', []),
-    new List('Done', []),
-    new List('sfsd', []),
-    new List('sfsd', []),
-  ];
+  lists: List[] = [];
+  subscription: Subscription;
 
-  constructor() { }
+  constructor(private listService: ListService) { }
 
   ngOnInit() {
+    this.lists = this.listService.getLists();
+
+    this.subscription = this.listService.listsChanged.subscribe(
+      (lists: List[]) => {
+        this.lists = lists;
+      }
+    );
+  }
+
+  onAddList() {
+    this.listService.addList({title: 'New List', cards: []});
   }
 
 }
