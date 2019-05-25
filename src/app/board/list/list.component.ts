@@ -12,9 +12,9 @@ import { ListService } from '../../shared/list.service';
 export class ListComponent implements OnInit {
   @Input() list: List;
   @Input() index;
-  cards: Card[] = [
-    new Card(1, 'test', 'just testing')
-  ];
+  cardDescription;
+  cardTitle;
+  createCard = false;
 
   constructor(private listService: ListService) { }
 
@@ -25,4 +25,16 @@ export class ListComponent implements OnInit {
     this.listService.deleteList(index);
   }
 
+  onAddCard() {
+    this.createCard = true;
+  }
+
+  onCreateCard(index) {
+    if (this.cardTitle && this.cardDescription) {
+      this.listService.addCard(index, {title: this.cardTitle, description: this.cardDescription});
+      this.createCard = false;
+      this.cardDescription = '';
+      this.cardTitle = '';
+    }
+  }
 }

@@ -1,6 +1,18 @@
 <div class="board">
   <button class="add-list" (click)="onAddList()">Add list</button>
   <div class="lists">
-    <app-list *ngFor="let list of lists, let i = index" [index]="i" [list]="list"></app-list>
+    <app-list
+    *ngFor="let list of lists, let i = index"
+    [index]="i"
+    [list]="list"></app-list>
+    <div *ngIf="createList" class="list">
+      <input
+      class="input"
+      type="text"
+      [(ngModel)]="listTitle"
+      maxlength="20"
+      placeholder="Add title">
+      <button class="create-btn" (click)="onCreateList()">Add</button>
+    </div>
   </div>
 </div>

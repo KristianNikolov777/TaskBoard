@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+// import { FormControl } from '@angular/forms';
 
 
 import { List } from '../shared/list.model';
@@ -13,6 +14,8 @@ import { ListService } from '../shared/list.service';
 export class BoardComponent implements OnInit {
   lists: List[] = [];
   subscription: Subscription;
+  createList = false;
+  listTitle;
 
   constructor(private listService: ListService) { }
 
@@ -27,7 +30,17 @@ export class BoardComponent implements OnInit {
   }
 
   onAddList() {
-    this.listService.addList({title: 'New List', cards: []});
+    this.createList = true;
+  }
+
+  onCreateList() {
+    if (this.listTitle) {
+      this.listService.addList({title: this.listTitle, cards: []});
+      this.createList = false;
+      this.listTitle = '';
+    } else {
+      alert('Please enter title!');
+    }
   }
 
 }
