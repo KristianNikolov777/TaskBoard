@@ -1,5 +1,5 @@
 .navbar {
-  height: 70px;
+  height: 9vh;
   font-family: 'Montserrat', sans-serif;
   background-color: #574f4f;
   position: fixed;
@@ -8,7 +8,7 @@
 }
 
 .container {
-  margin-top: 11vh;
+  margin-top: 9vh;
   width: 100vw;
   background-color: #f3f3f3;
   height: 89vh;
