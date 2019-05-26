@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { List } from './list.model';
-import { Card } from './card.model';
 
 @Injectable({
   providedIn: 'root'
@@ -50,9 +49,4 @@ export class ListService {
     localStorage.setItem('lists', JSON.stringify(this.lists));
   }
 
-  addCard(index, card: Card) {
-    this.lists[index].cards.push(card);
-    this.listsChanged.next(this.lists.slice());
-    localStorage.setItem('lists', JSON.stringify(this.lists));
-  }
 }

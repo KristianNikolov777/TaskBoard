@@ -12,4 +12,5 @@
 
 .actions {
   float: right;
+  cursor: pointer;
 }

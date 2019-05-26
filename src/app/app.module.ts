@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
 import { CardComponent } from './board/card/card.component';
 import { ListComponent } from './board/list/list.component';
+import { ListService } from './shared/list.service';
+import { CardService } from './shared/card.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { ListComponent } from './board/list/list.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ListService, CardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

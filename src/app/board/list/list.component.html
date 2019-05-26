@@ -19,7 +19,7 @@
     (click)="onDeleteList(index)"/>
   </div>
   <h4 class="list-title">{{ list.title }}</h4>
-  <app-card *ngFor="let card of list.cards" [card]="card"></app-card>
+  <app-card *ngFor="let card of list.cards, let i = index" [listIndex]="index" [cardIndex]="i" [card]="card"></app-card>
   <div class="card" *ngIf="createCard">
     <input
     class="input title"
