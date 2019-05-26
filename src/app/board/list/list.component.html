@@ -1,4 +1,4 @@
-<div class="list">
+<div class="list" (dragover)="allowDrop($event)" (drop)="drop($event)">
   <div class="list-actions">
     <img
     src="assets/images/plus.svg"
@@ -24,19 +24,24 @@
     <input placeholder="{{list.title}}" [(ngModel)]="listTitle">
     <button (click)="onUpdateList(index)">Save</button>
   </div>
-  <app-card *ngFor="let card of list.cards, let i = index" [listIndex]="index" [cardIndex]="i" [card]="card"></app-card>
+  <app-card
+    *ngFor="let card of list.cards, let i = index"
+    [listIndex]="index"
+    [cardIndex]="i"
+    [card]="card">
+  </app-card>
   <div class="card" *ngIf="createCard">
     <input
     class="input title"
     type="text"
     [(ngModel)]="cardTitle"
-    maxlength="15"
+    maxlength="40"
     placeholder="Add title">
     <input
     class="input description"
     type="text"
     [(ngModel)]="cardDescription"
-    maxlength="100"
+    maxlength="150"
     placeholder="Add description">
     <button class="create-btn" (click)="onCreateCard(index)">Add</button>
   </div>

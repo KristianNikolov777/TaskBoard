@@ -1,4 +1,8 @@
-<div *ngIf="!viewDetailCard" class="card">
+<div
+  *ngIf="!viewDetailCard"
+  class="card"
+  draggable="true"
+  (dragstart)="dragStart($event)" >
   {{card.title}}
   <span class="actions">
     <img

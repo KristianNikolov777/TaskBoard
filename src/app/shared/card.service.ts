@@ -25,10 +25,22 @@ export class CardService {
     localStorage.setItem('lists', JSON.stringify(lists));
   }
 
+  moveCard(startingCardIndex, newCardIndex, cardIndex) {
+    const lists = this.listService.getLists();
+    const card = lists[startingCardIndex].cards[cardIndex];
+    // remove card from the previous list
+    lists[startingCardIndex].cards.splice(cardIndex, 1);
+    // add card to the new list
+    lists[newCardIndex].cards.push(card);
+    this.listService.listsChanged.next(lists.slice());
+    localStorage.setItem('lists', JSON.stringify(lists));
+  }
+
   deleteCard(listIndex, cardIndex) {
     const lists = this.listService.getLists();
     lists[listIndex].cards.splice(cardIndex, 1);
     this.listService.listsChanged.next(lists.slice());
     localStorage.setItem('lists', JSON.stringify(lists));
   }
+
 }

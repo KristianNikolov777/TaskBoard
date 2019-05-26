@@ -18,7 +18,8 @@ export class ListComponent implements OnInit {
   editList = false;
   listTitle;
 
-  constructor(private listService: ListService, private cardService: CardService) { }
+  constructor(private listService: ListService,
+              private cardService: CardService) { }
 
   ngOnInit() {
   }
@@ -33,7 +34,8 @@ export class ListComponent implements OnInit {
 
   onCreateCard(index) {
     if (this.cardTitle) {
-      this.cardService.addCard(index, {title: this.cardTitle, description: this.cardDescription});
+      const card = {title: this.cardTitle, description: this.cardDescription};
+      this.cardService.addCard(index, card);
       this.createCard = false;
       this.cardDescription = '';
       this.cardTitle = '';
@@ -53,4 +55,17 @@ export class ListComponent implements OnInit {
       alert('Please add title');
     }
   }
+
+  allowDrop($event) {
+    $event.preventDefault();
+  }
+
+  drop($event) {
+    $event.preventDefault();
+    const startingListIndex = $event.dataTransfer.getData('startingListIndex');
+    const cardIndex = $event.dataTransfer.getData('cardIndex');
+    console.log(startingListIndex, cardIndex);
+    this.cardService.moveCard(startingListIndex, this.index, cardIndex);
+  }
+
 }

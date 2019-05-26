@@ -38,4 +38,9 @@ export class CardComponent implements OnInit {
     this.viewDetailCard = false;
   }
 
+  dragStart(event) {
+    event.dataTransfer.setData('startingListIndex', this.listIndex);
+    event.dataTransfer.setData('cardIndex', this.cardIndex);
+  }
+
 }
