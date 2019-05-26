@@ -10,7 +10,8 @@
     src="assets/images/edit.svg"
     height="20"
     width="20"
-    title="Edit list"/>
+    title="Edit list"
+    (click)="onEditList()"/>
     <img
     src="assets/images/trash-2.svg"
     height="20"
@@ -18,7 +19,11 @@
     title="Delete list"
     (click)="onDeleteList(index)"/>
   </div>
-  <h4 class="list-title">{{ list.title }}</h4>
+  <h4 *ngIf="!editList" class="list-title">{{ list.title }}</h4>
+  <div *ngIf="editList">
+    <input placeholder="{{list.title}}" [(ngModel)]="listTitle">
+    <button (click)="onUpdateList(index)">Save</button>
+  </div>
   <app-card *ngFor="let card of list.cards, let i = index" [listIndex]="index" [cardIndex]="i" [card]="card"></app-card>
   <div class="card" *ngIf="createCard">
     <input

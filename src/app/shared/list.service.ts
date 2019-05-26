@@ -43,6 +43,12 @@ export class ListService {
     localStorage.setItem('lists', JSON.stringify(this.lists));
   }
 
+  editList(index, newTitle) {
+    this.lists[index].title = newTitle;
+    this.listsChanged.next(this.lists.slice());
+    localStorage.setItem('lists', JSON.stringify(this.lists));
+  }
+
   deleteList(index) {
     this.lists.splice(index, 1);
     this.listsChanged.next(this.lists.slice());
