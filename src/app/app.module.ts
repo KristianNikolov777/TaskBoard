@@ -9,13 +9,15 @@ import { CardComponent } from './board/card/card.component';
 import { ListComponent } from './board/list/list.component';
 import { ListService } from './shared/list.service';
 import { CardService } from './shared/card.service';
+import { CardDetailComponent } from './board/card/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
     CardComponent,
-    ListComponent
+    ListComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,
