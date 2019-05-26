@@ -22,6 +22,7 @@ export class ListComponent implements OnInit {
               private cardService: CardService) { }
 
   ngOnInit() {
+    this.listTitle = this.list.title;
   }
 
   onDeleteList(index) {
@@ -66,6 +67,10 @@ export class ListComponent implements OnInit {
     const cardIndex = $event.dataTransfer.getData('cardIndex');
     console.log(startingListIndex, cardIndex);
     this.cardService.moveCard(startingListIndex, this.index, cardIndex);
+  }
+
+  onClose() {
+    this.createCard = false;
   }
 
 }

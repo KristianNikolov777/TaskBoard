@@ -3,24 +3,26 @@
   class="card"
   draggable="true"
   (dragstart)="dragStart($event)" >
-  {{card.title}}
+  <span class="title">{{card.title}}</span>
   <span class="actions">
     <img
       src="assets/images/info.svg"
-      height="20"
-      width="20"
+      height="15"
+      width="15"
+      class="info"
       title="View details"
       (click)="onViewCard()"/>
     <img
       src="assets/images/edit-3.svg"
-      height="20"
-      width="20"
+      height="15"
+      width="15"
       title="Edit card"
+      class="edit"
       (click)="onEditCard()"/>
     <img
       src="assets/images/delete.svg"
-      height="20"
-      width="20"
+      height="15"
+      width="15"
       (click)="onDeleteCard(cardIndex)"
       title="Delete card"/>
   </span>

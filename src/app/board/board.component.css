@@ -10,15 +10,15 @@
 }
 
 .add-list {
-  background-color: #3fba8d;
   height: 45px;
-  width: 80px;
+  font-family: 'Montserrat', sans-serif;
   border-radius: 4px;
   border: none;
   font-size: 14px;
-  right: 30px;
-  position: absolute;
-  top: 11vh;
+  right: 20px;
+  padding: 10px 20px;
+  position: fixed;
+  top: 7px;
 }
 
 .list {
@@ -44,11 +44,7 @@
 }
 
 .create-btn {
-  margin-left: 20px;
-  background-color: #3fba8d;
-  height: 35px;
-  width: 80px;
-  border-radius: 4px;
-  border: none;
-  font-size: 14px;
+  vertical-align: middle;
+  padding-left: 10px;
+  cursor: pointer;
 }

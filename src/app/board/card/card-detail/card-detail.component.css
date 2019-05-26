@@ -32,6 +32,7 @@
 
 .input-description {
   height: 50px;
+  resize: none;
 }
 
 .edit-btn {
@@ -41,22 +42,29 @@
   height: 30px;
   width: 70px;
   display: block;
-  background-color: #3fba8d;
+  background-color: #17B978;
   border-radius: 4px;
   border: none;
   font-size: 14px;
 }
 
 .info {
-  margin-top: 20px;
+  margin-top: 5px;
   margin-left: 10px;
 }
 
 .label {
   text-decoration: underline;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .title {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.description {
+  height: 60px;
+  max-height: 60px;
+  overflow-y: auto;
 }

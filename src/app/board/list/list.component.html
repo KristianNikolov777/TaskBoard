@@ -2,47 +2,65 @@
   <div class="list-actions">
     <img
     src="assets/images/plus.svg"
-    height="20"
-    width="20"
+    height="18"
+    width="18"
     title="Add card"
+    class="plus"
     (click)="onAddCard()"/>
     <img
     src="assets/images/edit.svg"
-    height="20"
-    width="20"
+    height="18"
+    width="18"
     title="Edit list"
+    class="edit"
     (click)="onEditList()"/>
     <img
     src="assets/images/trash-2.svg"
-    height="20"
-    width="20"
+    height="18"
+    width="18"
     title="Delete list"
     (click)="onDeleteList(index)"/>
   </div>
-  <h4 *ngIf="!editList" class="list-title">{{ list.title }}</h4>
+  <h3 *ngIf="!editList" class="list-title">{{ list.title }}</h3>
   <div *ngIf="editList">
-    <input placeholder="{{list.title}}" [(ngModel)]="listTitle">
-    <button (click)="onUpdateList(index)">Save</button>
+    <input placeholder="{{list.title}}" [(ngModel)]="listTitle" class="edit-title">
+    <img
+      src="assets/images/save.svg"
+      height="20"
+      width="20"
+      class="save-btn"
+      (click)="onUpdateList(index)" />
   </div>
-  <app-card
-    *ngFor="let card of list.cards, let i = index"
-    [listIndex]="index"
-    [cardIndex]="i"
-    [card]="card">
-  </app-card>
-  <div class="card" *ngIf="createCard">
-    <input
-    class="input title"
-    type="text"
-    [(ngModel)]="cardTitle"
-    maxlength="40"
-    placeholder="Add title">
-    <input
-    class="input description"
-    type="text"
-    [(ngModel)]="cardDescription"
-    maxlength="150"
-    placeholder="Add description">
-    <button class="create-btn" (click)="onCreateCard(index)">Add</button>
+  <div class="cards">
+    <div class="card" *ngIf="createCard">
+      <img
+        class="close"
+        src="assets/images/close.svg"
+        height="20"
+        width="20"
+        (click)="onClose()"/>
+      <input
+        class="input title"
+        type="text"
+        [(ngModel)]="cardTitle"
+        maxlength="40"
+        placeholder="Add title">
+      <textarea
+        rows="8"
+        cols="80"
+        class="input description"
+        type="text"
+        [(ngModel)]="cardDescription"
+        maxlength="150"
+        placeholder="Add description">
+      </textarea>
+      <button class="create-btn" (click)="onCreateCard(index)">Add</button>
+    </div>
+    <app-card
+      *ngFor="let card of list.cards, let i = index"
+      [listIndex]="index"
+      [cardIndex]="i"
+      [card]="card">
+    </app-card>
   </div>
 </div>

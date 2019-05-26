@@ -1,5 +1,5 @@
 <div class="board">
-  <button class="add-list" (click)="onAddList()">Add list</button>
+  <button class="add-list" (click)="onAddList()">Create list</button>
   <div class="lists">
     <app-list
     *ngFor="let list of lists, let i = index"
@@ -12,7 +12,12 @@
       [(ngModel)]="listTitle"
       maxlength="20"
       placeholder="Add title">
-      <button class="create-btn" (click)="onCreateList()">Add</button>
+      <img
+        src="assets/images/save.svg"
+        class="create-btn"
+        height="20"
+        width="20"
+        (click)="onCreateList()" />
     </div>
   </div>
 </div>

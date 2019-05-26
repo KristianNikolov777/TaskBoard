@@ -14,3 +14,15 @@
   float: right;
   cursor: pointer;
 }
+
+.info, .edit {
+  padding-right: 4px;
+}
+
+.title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 165px;
+  white-space: nowrap;
+  display: inline-block;
+}

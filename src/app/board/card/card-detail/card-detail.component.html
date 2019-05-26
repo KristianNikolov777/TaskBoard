@@ -12,12 +12,15 @@
       [(ngModel)]="cardTitle"
       maxlength="15"
       placeholder="{{card.title}}">
-    <input
+    <textarea
+      rows="8"
+      cols="80"
       class="input input-description"
       type="text"
       [(ngModel)]="cardDescription"
       maxlength="100"
       placeholder="{{card.description}}">
+    </textarea>
     <button class="edit-btn" (click)="onEditCard()">Update</button>
   </div>
   <div class="info" *ngIf="!editMode">
