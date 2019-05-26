@@ -1,0 +1,62 @@
+.detail-card {
+  width: 94%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  height: 150px;
+  padding: 10px 5px 4px 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.input {
+  padding-left: 10px;
+  border-radius: 4px;
+  border-width: 0;
+  width: 80%;
+  background-color: #f3f3f3;
+  margin-top: 10px;
+}
+
+.input-title {
+  height: 30px;
+}
+
+.input-description {
+  height: 50px;
+}
+
+.edit-btn {
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 30px;
+  width: 70px;
+  display: block;
+  background-color: #3fba8d;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+}
+
+.info {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.label {
+  text-decoration: underline;
+  margin-bottom: 8px;
+}
+
+.title {
+  margin-bottom: 15px;
+}

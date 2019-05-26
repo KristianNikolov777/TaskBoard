@@ -18,6 +18,13 @@ export class CardService {
     localStorage.setItem('lists', JSON.stringify(lists));
   }
 
+  editCard(listIndex, cardIndex, card: Card) {
+    const lists = this.listService.getLists();
+    lists[listIndex].cards[cardIndex] = card;
+    this.listService.listsChanged.next(lists.slice());
+    localStorage.setItem('lists', JSON.stringify(lists));
+  }
+
   deleteCard(listIndex, cardIndex) {
     const lists = this.listService.getLists();
     lists[listIndex].cards.splice(cardIndex, 1);

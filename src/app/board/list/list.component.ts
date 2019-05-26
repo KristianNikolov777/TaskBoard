@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
   }
 
   onCreateCard(index) {
-    if (this.cardTitle && this.cardDescription) {
+    if (this.cardTitle) {
       this.cardService.addCard(index, {title: this.cardTitle, description: this.cardDescription});
       this.createCard = false;
       this.cardDescription = '';

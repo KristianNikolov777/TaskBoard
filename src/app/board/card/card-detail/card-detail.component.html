@@ -1,3 +1,29 @@
-<p>
-  card-detail works!
-</p>
+<div class="detail-card">
+  <img
+    class="close"
+    src="assets/images/close.svg"
+    height="20"
+    width="20"
+    (click)="onClose()"/>
+  <div *ngIf="editMode">
+    <input
+      class="input input-title"
+      type="text"
+      [(ngModel)]="cardTitle"
+      maxlength="15"
+      placeholder="{{card.title}}">
+    <input
+      class="input input-description"
+      type="text"
+      [(ngModel)]="cardDescription"
+      maxlength="100"
+      placeholder="{{card.description}}">
+    <button class="edit-btn" (click)="onEditCard()">Update</button>
+  </div>
+  <div class="info" *ngIf="!editMode">
+    <div class="label">Title:</div>
+    <div class="title">{{card.title}}</div>
+    <div class="label">Description:</div>
+    <div class="description">{{card.description}}</div>
+  </div>
+</div>
