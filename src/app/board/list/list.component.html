@@ -1,29 +1,33 @@
 <div class="list" (dragover)="allowDrop($event)" (drop)="drop($event)">
   <div class="list-actions">
     <img
-    src="assets/images/plus.svg"
-    height="18"
-    width="18"
-    title="Add card"
-    class="plus"
-    (click)="onAddCard()"/>
+      src="assets/images/plus.svg"
+      height="18"
+      width="18"
+      title="Add card"
+      class="plus"
+      (click)="onAddCard()"/>
     <img
-    src="assets/images/edit.svg"
-    height="18"
-    width="18"
-    title="Edit list"
-    class="edit"
-    (click)="onEditList()"/>
+      src="assets/images/edit.svg"
+      height="18"
+      width="18"
+      title="Edit list"
+      class="edit"
+      (click)="onEditList()"/>
     <img
-    src="assets/images/trash-2.svg"
-    height="18"
-    width="18"
-    title="Delete list"
-    (click)="onDeleteList(index)"/>
+      src="assets/images/trash-2.svg"
+      height="18"
+      width="18"
+      title="Delete list"
+      (click)="onDeleteList(index)"/>
   </div>
   <h3 *ngIf="!editList" class="list-title">{{ list.title }}</h3>
   <div *ngIf="editList">
-    <input placeholder="{{list.title}}" [(ngModel)]="listTitle" class="edit-title">
+    <input
+      placeholder="{{list.title}}"
+      [(ngModel)]="listTitle"
+      class="edit-title"
+      (keyup.enter)="onUpdateList(index)">
     <img
       src="assets/images/save.svg"
       height="20"
@@ -52,7 +56,8 @@
         type="text"
         [(ngModel)]="cardDescription"
         maxlength="150"
-        placeholder="Add description">
+        placeholder="Add description"
+        (keyup.enter)="onCreateCard(index)">
       </textarea>
       <button class="create-btn" (click)="onCreateCard(index)">Add</button>
     </div>

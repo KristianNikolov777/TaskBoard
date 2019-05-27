@@ -19,7 +19,8 @@
       type="text"
       [(ngModel)]="cardDescription"
       maxlength="100"
-      placeholder="{{card.description}}">
+      placeholder="{{card.description}}"
+      (keyup.enter)="onEditCard()">
     </textarea>
     <button class="edit-btn" (click)="onEditCard()">Update</button>
   </div>

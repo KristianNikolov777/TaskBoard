@@ -2,16 +2,17 @@
   <button class="add-list" (click)="onAddList()">Create list</button>
   <div class="lists">
     <app-list
-    *ngFor="let list of lists, let i = index"
-    [index]="i"
-    [list]="list"></app-list>
+      *ngFor="let list of lists, let i = index"
+      [index]="i"
+      [list]="list"></app-list>
     <div *ngIf="createList" class="list">
       <input
-      class="input"
-      type="text"
-      [(ngModel)]="listTitle"
-      maxlength="20"
-      placeholder="Add title">
+        class="input"
+        type="text"
+        [(ngModel)]="listTitle"
+        maxlength="20"
+        placeholder="Add title"
+        (keyup.enter)="onCreateList()">
       <img
         src="assets/images/save.svg"
         class="create-btn"

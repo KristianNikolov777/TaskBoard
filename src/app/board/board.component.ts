@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-// import { FormControl } from '@angular/forms';
-
 
 import { List } from '../shared/list.model';
 import { ListService } from '../shared/list.service';
