@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 // import { FormControl } from '@angular/forms';
 
@@ -11,7 +11,7 @@ import { ListService } from '../shared/list.service';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent implements OnInit, OnDestroy {
   lists: List[] = [];
   subscription: Subscription;
   createList = false;
@@ -43,4 +43,8 @@ export class BoardComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    // Unsubscribe to prevent memory leaks
+    this.subscription.unsubscribe();
+  }
 }

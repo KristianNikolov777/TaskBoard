@@ -40,6 +40,8 @@ export class ListComponent implements OnInit {
       this.createCard = false;
       this.cardDescription = '';
       this.cardTitle = '';
+    } else {
+      alert('Please add title!');
     }
   }
 
