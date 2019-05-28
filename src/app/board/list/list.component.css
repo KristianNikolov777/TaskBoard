@@ -5,8 +5,8 @@
   margin-left: 2vw;
   margin-right: 2vw;
   display: inline-block;
-  height: 20rem;
-  max-height: 20rem;
+  height: 24rem;
+  max-height: 24rem;
   overflow-y: auto;
   border-radius: 10px;
   border: 1px solid #d4cece;
@@ -74,8 +74,8 @@
 }
 
 .cards {
-  height: 250px;
-  max-height: 250px;
+  height: 20rem;
+  max-height: 20rem;
   overflow-y: auto;
 }
 
