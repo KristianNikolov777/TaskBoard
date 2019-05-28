@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
-  height: 150px;
+  height: 160px;
   padding: 10px 5px 4px 5px;
   font-size: 16px;
   margin-top: 10px;
@@ -61,10 +61,13 @@
 
 .title {
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 
 .description {
   height: 60px;
+  width: auto;
   max-height: 60px;
   overflow-y: auto;
+  word-wrap: break-word;
 }

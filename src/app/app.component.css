@@ -8,9 +8,15 @@
   width: 100vw;
 }
 
-h1 {
-  margin-top: 10px;
+.header {
   font-family: 'Open Sans', sans-serif;
+  height: 5vh;
+  top: 2vh;
+  bottom: 2vh;
+  margin: 0;
+  position: relative;
+  font-size: 27px;
+  font-weight: bold;
 }
 
 .container {
@@ -19,4 +25,7 @@ h1 {
   height: 89vh;
   max-height: 89vh;
   overflow-y: auto;
+  /* background-image: url('https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-repeat: no-repeat;
+  background-size: auto; */
 }
