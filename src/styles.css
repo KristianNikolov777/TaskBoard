@@ -13,7 +13,8 @@ body {
 
 ::-webkit-scrollbar
 {
-	width: 7px;
+  width: 0.4rem;
+  height: 0.4rem;
 	background-color: #F5F5F5;
 }
 

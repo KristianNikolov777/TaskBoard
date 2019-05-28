@@ -19,6 +19,7 @@
   padding: 10px 20px;
   position: fixed;
   top: 7px;
+  cursor: pointer;
 }
 
 .list {
