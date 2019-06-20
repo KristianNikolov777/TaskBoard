@@ -1,4 +1,4 @@
-# Kanban
+# TaskBoard
 
 You can test the app at:
 http://ng-taskboard-deployment.s3-website-us-east-1.amazonaws.com/
